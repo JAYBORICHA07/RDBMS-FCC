@@ -66,31 +66,33 @@
 ### cp -r website-boilerplate toms-website :
 - with this example we can copy toms-website folder in the website-boilerplate directory.
 
-Relational Databases by Building a Mario Database
-Notice that the prompt changed to let you know that you are now interacting with PostgreSQL. First thing to do is see what databases are here. Type \l into the prompt to list them.
+# Relational Databases by Building a Mario Database
+
+- Notice that the prompt changed to let you know that you are now interacting with PostgreSQL. First thing to do is see what databases are here. Type \l into the prompt to list them.
 
 
-he databases you see are there by default. You can make your own like this:
-CREATE DATABASE database_name;
-The capitalized words are keywords telling PostgreSQL what to do. The name of the database is the lowercase word. Note that all commands need a semi-colon at the end. Create a new database named first_database.
-if you don't get a message after entering a command, it means it's incomplete and you likely forgot the semi-colon. You can just add it on the next line and press enter to finish the command.
-You can connect to a database by entering \c database_name. You need to connect to add information.
-You should see a message that you are connected. Notice that the prompt changed to second_database=>. So the postgres=> prompt before must have meant you were connected to that database. A database is made of tables that hold your data. Enter \d to display the tables.
-Looks like there's no tables or relations yet. Similar to how you created a database, you can create a table like this:
-CREATE TABLE table_name();
+- he databases you see are there by default. You can make your own like this: CREATE DATABASE database_name;
 
+- The capitalized words are keywords telling PostgreSQL what to do. The name of the database is the lowercase word. Note that all commands need a semi-colon at the end. Create a new database named first_database.
 
-Note that the parenthesis are needed for this one. It will create the table in the database you are connected to. Create a table named first_table in second_database.
-You can view more details about a table by adding the table name after the display command like this: \d table_name. View more details about your second_table.
-Tables need columns to describe the data in them, yours doesn't have any yet. Here's an example of how to add one:
-ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+- if you don't get a message after entering a command, it means it's incomplete and you likely forgot the semi-colon. You can just add it on the next line and press enter to finish the command.
 
+- You can connect to a database by entering \c database_name. You need to connect to add information.
 
-Add a column to second_table named first_column. Give it a data type of INT. INT stands for integer. Don't forget the semi-colon. 😄
-Those are some good looking columns. You will probably need to know how to remove them. Here's an example:
-ALTER TABLE table_name DROP COLUMN column_name;
+- You should see a message that you are connected. Notice that the prompt changed to second_database=>. So the postgres=> prompt before must have meant you were connected to that database. A database is made of tables that hold your data. Enter \d to display the tables.
 
+- you can create a table like this: CREATE TABLE table_name();
 
-Drop your age column.
-A common data type is VARCHAR. It's a short string of characters. You need to give it a maximum length when using it like this: VARCHAR(30).
-Add a new column to second_table, give it a name of name and a data type of VARCHAR(30)
+- Note that the parenthesis are needed for this one. It will create the table in the database you are connected to. Create a table named first_table in second_database.
+
+- You can view more details about a table by adding the table name after the display command like this: \d table_name.
+
+- Tables need columns to describe the data in them, yours doesn't have any yet. Here's an example of how to add one: ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+
+- Add a column to second_table named first_column. Give it a data type of INT. INT stands for integer. Don't forget the semi-colon. 😄
+
+- Those are some good looking columns. You will probably need to know how to remove them. Here's an example: ALTER TABLE table_name DROP COLUMN column_name;
+
+- A common data type is VARCHAR. It's a short string of characters. You need to give it a maximum length when using it like this: VARCHAR(30).
+
+- Add a new column to second_table, give it a name of name and a data type of VARCHAR(30)
