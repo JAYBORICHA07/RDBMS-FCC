@@ -70,29 +70,49 @@
 
 - Notice that the prompt changed to let you know that you are now interacting with PostgreSQL. First thing to do is see what databases are here. Type \l into the prompt to list them.
 
+### ``` CREATE DATABASE databasename;```
+- This command is used to create the database;
 
-- he databases you see are there by default. You can make your own like this: CREATE DATABASE database_name;
+### ```CREATE TABLE tablename(column_name type constrains,...);```
+- This command is used to create the tables in database.
 
-- The capitalized words are keywords telling PostgreSQL what to do. The name of the database is the lowercase word. Note that all commands need a semi-colon at the end. Create a new database named first_database.
+### ```INSERT INTO table_name(col1,col2,..) values(val1,val2,...);```
+- This command is used to add the data into different columns. we can also add mutiple data like this ```INSERT INTO table_name(col1,col2,..) values(val1a,val1b,...),(val1b,vaal2b);```
+### ```ALTER TABLE tablename task WHERE condition;```
+- Alter table is used to alter the table
+- in task we can do various tasks like drop column, add column, add constrains, remove constrains, rename columns,rename table, rename database and many more.
+- in the condition the place where we want to alter or change the table is to be written.
 
-- if you don't get a message after entering a command, it means it's incomplete and you likely forgot the semi-colon. You can just add it on the next line and press enter to finish the command.
+## here is some example of alter commmand
 
-- You can connect to a database by entering \c database_name. You need to connect to add information.
+- Add a new column to a table: ``` ALTER TABLE table_name ADD COLUMN new_column_name TYPE;```
 
-- You should see a message that you are connected. Notice that the prompt changed to second_database=>. So the postgres=> prompt before must have meant you were connected to that database. A database is made of tables that hold your data. Enter \d to display the tables.
+- Drop a column in a table : ``` ALTER TABLE table_name DROP COLUMN column_name;```
 
-- you can create a table like this: CREATE TABLE table_name();
+- Rename a column: ```ALTER TABLE table_name RENAME column_name TO new_column_name;```
 
-- Note that the parenthesis are needed for this one. It will create the table in the database you are connected to. Create a table named first_table in second_database.
+- Add a primary key to a table.: ``` ALTER TABLE table_name ADD PRIMARY KEY (column,...);```
 
-- You can view more details about a table by adding the table name after the display command like this: \d table_name.
+- Remove the primary key from a table : ``` ALTER TABLE table_name DROP CONSTRAINT primary_key_constraint_name;```
 
-- Tables need columns to describe the data in them, yours doesn't have any yet. Here's an example of how to add one: ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+- Rename a table : ``` ALTER TABLE table_name RENAME TO new_table_name;```
 
-- Add a column to second_table named first_column. Give it a data type of INT. INT stands for integer. Don't forget the semi-colon. 😄
+### DETETE COMMANDS
+- This is how we can delete a row :  ```DELETE FROM table_name WHERE condition; ```
 
-- Those are some good looking columns. You will probably need to know how to remove them. Here's an example: ALTER TABLE table_name DROP COLUMN column_name;
+- Delete all rows of a table: : ```DELETE FROM table_name;```
 
-- A common data type is VARCHAR. It's a short string of characters. You need to give it a maximum length when using it like this: VARCHAR(30).
+- Delete specific rows based on a condition: ```DELETE FROM table_name WHERE condition;```
 
-- Add a new column to second_table, give it a name of name and a data type of VARCHAR(30)
+### SELECT COMMAND 
+- select command is used to select or view perticular info from table
+
+## HERE ARE SOME EXAMPLE OF SELECT COMMAND
+
+- select all data from a table: ``` SELECT * FROM table_name;````
+
+- select data from specified columns of all rows in a table: ``` SELECT column_list FROM table;```
+
+-  select data from a table with a filter: ``` SELECT * FROM table WHERE condition;```
+
+- select joint data : ```SELECT *  FROM table1 FULL OUTER JOIN table2 ON conditions;```
